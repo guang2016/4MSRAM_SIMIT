@@ -4055,7 +4055,7 @@ TEST_BLOCK(Verify_Test)
 	DWORD RE_CFG_dat;
 	int xaddress,yaddress;
 
-	int Verify_Time = 20;
+	int Verify_Time = 100;					//20181114(120)
 	
 	CArray<double,double> rst_current_result,set_current_result;
 	
@@ -4069,6 +4069,8 @@ TEST_BLOCK(Verify_Test)
 	pin_dc_state_set( LB_pl, t_vil, TRUE );
 	
 	FILE *fp = fopen( Verify_Test_FILE, "a+" );
+	FILE *fp2 = fopen( Verify_num_FILE, "a+" );
+	FILE *fp3 = fopen( Verify_resistance_FILE, "a+" );
 		
 	for( xaddress = X_Start_Verify ; xaddress < X_Stop_Verify ; xaddress+=X_Step_Verify )
 	{
@@ -4076,13 +4078,18 @@ TEST_BLOCK(Verify_Test)
 		{
 			for( int k = 0 ; k <= Verify_Time ; k++)
 			{
+
+//				float Vbg_Voltage = SET_Vbg_Verify(1.4,0.03,k);//20181115
+//				int Tset_Time = SET_Time_Verify(28,0,k);
+
+				float Vbg_Voltage = SET_Vbg_Verify(1.4,0,k);//20181115
+				int Tset_Time = SET_Time_Verify(12,10,k);
 				
-				float Vbg_Voltage = SET_Vbg_Verify(1.0,0.1,k);
-				int Tset_Time = SET_Time_Verify(10,2,k);
-				//SET_Time_Verify(10,2,k);    	//	total需要大于10
+//				float Vbg_Voltage = SET_Vbg_Verify(0.94,0,k);
+//				int Tset_Time = SET_Time_Verify(112,0,k);
 				
 				//	CFG_dat = trim_initial();
-				CFG_dat = 0x80db4cc9;    // extern VBG CLK I = 0.64(1)0.76(9)0.88(5)1(d)   width  50ns   
+				CFG_dat = 0x00db4cc9;    // extern VBG CLK I = 0.64(1)0.76(9)0.88(5)1(d)   width  50ns   
 				dmain( CFG_dat );
 				funtest( CFG_set_PAT, finish );
 				
@@ -4136,9 +4143,22 @@ TEST_BLOCK(Verify_Test)
 						range_3 = range_3 + 1;
 				}
 
-//				output("k=%d r1=%d r2=%d r3=%d vbg=5.5f% time=%d\n",k,range_1,range_2,range_3,Vbg_Voltage,Tset_Time * 7);
+				output("k=%d r1=%d r2=%d r3=%d vbg=%5.5f time=%5.5f\n",k,range_1,range_2,range_3,Vbg_Voltage,(Tset_Time * 4.5));
+				fprintf( fp2, "%5d %5d	%5d	 %12.2f  %12.5f %5.5f %10x  %d %d %d\n", xaddress, yaddress,k,Vbg_Voltage,(0.4/3.75)*Vbg_Voltage,(Tset_Time * 4.5),CFG_dat,range_1,range_2,range_3 );
 
-				
+				for(  i = 0 ; i < 16 ; i++)
+				{	
+					fprintf( fp3, "%5d %5d	%5d	 %12.2f  %12.5f %10x  %5d", xaddress, yaddress,k,Vbg_Voltage,(0.4/3.75)*Vbg_Voltage,CFG_dat,i );
+					fprintf( fp3, "%12.2f	", set_current_result[ i ]);
+					if( set_current_result[ i ] < 30 )
+						set_current_result[ i ] = 30;
+					fprintf( fp3, "%12.2f	", 300000 / fabs( set_current_result[ i ] )		);
+					fprintf( fp3, "%12.2f	", log( 300000000 / fabs( set_current_result[ i ] ) ) / log( 10 ) );
+						
+					fprintf( fp3, "\n" );
+				}
+
+				/*
 				if(range_1 > 0)
 				{
 					for( int i = 0 ; i < 16 ; i++)
@@ -4168,12 +4188,13 @@ TEST_BLOCK(Verify_Test)
 						fprintf( fp, "\n" );
 					}
 					break;
-				}
-				else if (k == 14)
+				}*/
+				/*
+				if(range_2 >= 11)
 				{
-					for( int i = Verify_Time ; i < 16 ; i++)
+					for( int i = 0 ; i < 16 ; i++)
 					{	
-						fprintf( fp, "%5d %5d	%5d	 %12.2f  %12.5f %10x  %5d", k,xaddress, yaddress,external_vbg,(0.4/3.75)*external_vbg,CFG_dat,i );
+						fprintf( fp, "%5d %5d	%5d	 %12.2f  %12.5f %10x  %5d", k,xaddress, yaddress,Vbg_Voltage,(0.4/3.75)*Vbg_Voltage,CFG_dat,i );
 						fprintf( fp, "%12.2f	", set_current_result[ i ]);
 						if( set_current_result[ i ] < 30 )
 							set_current_result[ i ] = 30;
@@ -4184,6 +4205,21 @@ TEST_BLOCK(Verify_Test)
 					}
 					break;
 				}
+				else if (k == Verify_Time)
+				{
+					for( int i = 0 ; i < 16 ; i++)
+					{	
+						fprintf( fp, "%5d %5d	%5d	 %12.2f  %12.5f %10x  %5d", k,xaddress, yaddress,Vbg_Voltage,(0.4/3.75)*Vbg_Voltage,CFG_dat,i );
+						fprintf( fp, "%12.2f	", set_current_result[ i ]);
+						if( set_current_result[ i ] < 30 )
+							set_current_result[ i ] = 30;
+						fprintf( fp, "%12.2f	", 300000 / fabs( set_current_result[ i ] )		);
+						fprintf( fp, "%12.2f	", log( 300000000 / fabs( set_current_result[ i ] ) ) / log( 10 ) );
+						
+						fprintf( fp, "\n" );
+					}
+					break;
+				}*/
 
 			}
 			
@@ -4191,6 +4227,8 @@ TEST_BLOCK(Verify_Test)
 	}
 	
 	fclose(fp);
+	fclose(fp2);
+	fclose(fp3);
 	
 	return MULTI_DUT;
 	

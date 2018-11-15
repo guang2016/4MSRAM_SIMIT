@@ -84,7 +84,7 @@ SEQUENCE_TABLE( sample_sequence_table )
 
 	/////////////////////////////////////////////////////////////////////////////  Verify
 	
-	TEST( SET_Program_Verify_Test,					NEXT,			NEXT		)
+//	TEST( SET_Program_Verify_Test,					NEXT,			NEXT		)
 	TEST( Verify_Test,								NEXT,			NEXT		)
 	
 

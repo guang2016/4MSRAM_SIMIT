@@ -43,3 +43,5 @@
 #define SET_Program_Verify_Test_FILE									"D:/lyg/Test Data/TQV3_4MSRAM_SET_Program_Verify_Test_FILE_20181031.dat"
 #define RST_Before_SET_Program_Verify_Test_FILE							"D:/lyg/Test Data/TQV3_4MSRAM_RST_Before_SET_Program_Verify_Test_FILE_20181031.dat"
 #define Verify_Test_FILE												"D:/lyg/Test Data/TQV3_4MSRAM_Verify_Test_FILE_20181031.dat"
+#define Verify_num_FILE													"D:/lyg/Test Data/TQV3_4MSRAM_Verify_num_FILE_20181115.dat"
+#define Verify_resistance_FILE											"D:/lyg/Test Data/TQV3_4MSRAM_Verify_resistance_FILE_20181115.dat"

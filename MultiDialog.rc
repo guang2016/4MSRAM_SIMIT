@@ -1,0 +1,365 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+SIMPLE DIALOG DISCARDABLE  0, 0, 240, 354
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "There is a fairly wide selection of supported controls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,18,328,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,88,328,50,14
+    LTEXT           "Count = xxx",IDC_SM_static,7,38,53,8
+    CONTROL         "Check",IDC_SM_check,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,94,41,10
+    EDITTEXT        IDC_SM_int,7,124,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SM_float,7,162,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SM_string,7,200,40,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_SM_combo,7,278,48,43,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_SM_listbox,7,234,48,34,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "A simple dialog that contains all of the control types, each of which\ncontrols a C variable defined with the XXX_VARIABLE macros.\nClicking OK will causes output in the debugger output window.",
+                    IDC_STATIC,5,3,213,25
+    LTEXT           "Control Type = ""Static Text""",IDC_STATIC,79,38,90,8
+    LTEXT           "Declaration   = CSTRING_VARIABLE",IDC_STATIC,79,46,120,
+                    8
+    LTEXT           "Control Type = ""Check Box""",IDC_STATIC,79,94,90,8
+    LTEXT           "Declaration   = BOOL_VARIABLE",IDC_STATIC,79,102,107,8
+    LTEXT           "Control Type = ""Edit Box""",IDC_STATIC,79,124,82,8
+    LTEXT           "Declaration   = INT_VARIABLE",IDC_STATIC,79,132,100,8
+    LTEXT           "Control Type = ""Edit Box""",IDC_STATIC,79,161,82,8
+    LTEXT           "Declaration   = FLOAT_VARIABLE",IDC_STATIC,79,169,110,8
+    LTEXT           "Control Type = ""Edit Box""",IDC_STATIC,79,200,82,8
+    LTEXT           "Declaration   = CSTRING_VARIABLE",IDC_STATIC,79,208,120,
+                    8
+    LTEXT           "Control Type = ""Combo Box""",IDC_STATIC,79,276,92,8
+    LTEXT           "Declaration   = CSTRING_VARIABLE",IDC_STATIC,79,284,120,
+                    8
+    LTEXT           "Styles/Type = Drop List",IDC_STATIC,79,293,75,8
+    LTEXT           "Control Type = ""List Box""",IDC_STATIC,79,233,80,8
+    LTEXT           "Declaration   = CSTRING_VARIABLE",IDC_STATIC,79,241,120,
+                    8
+    LTEXT           "Control Type = ""Button""",IDC_STATIC,79,64,76,8
+    LTEXT           "Declaration   = VOID_VARIABLE",IDC_STATIC,79,72,105,8
+    PUSHBUTTON      "More Info",IDC_SM_more,7,66,50,14
+END
+
+CHOOSER DIALOG DISCARDABLE  0, 0, 135, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Chooser dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,127,50,14
+    DEFPUSHBUTTON   "Done",IDCANCEL,78,127,50,14
+    LISTBOX         IDC_CH_combo,7,54,102,48,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Click on any one to invoke that dialog.\nThe data in these dialogs is in general persistent across invocations.  It is recommended to try them in the order that they appear here.",
+                    IDC_STATIC,7,7,121,44
+END
+
+IMMEDIATE DIALOG DISCARDABLE  0, 0, 172, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Some controls can be made immediate"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,26,90,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,90,50,14
+    CONTROL         "Click Me!",IDC_IM_check,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,44,45,10
+    COMBOBOX        IDC_IM_combo,25,62,48,38,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_IM_listbox,85,38,48,37,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Immediate Controls change the variable in real time,\nwhich in this case will sent text to the debugger output window",
+                    IDC_STATIC,7,7,161,27
+END
+
+DYNAMIC DIALOG DISCARDABLE  0, 0, 135, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dynamic Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,146,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,78,146,50,14
+    COMBOBOX        IDC_DY_cars,15,76,48,44,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_DY_bikes,15,98,48,40,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Show state",IDC_DY_state,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,60,51,10
+    CONTROL         "",IDC_DY_enable,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    16,45,8,8
+    LTEXT           "Immediate mode is off",IDC_DY_message,27,45,71,8
+    LTEXT           "What car",IDC_DY_carsx,68,77,38,8
+    LTEXT           "What bike",IDC_DY_bikesx,67,101,45,8
+    LTEXT           "When ""Immediate mode"" is checked\nthe other controls will act as soon as you click them.  Otherwise, you must click OK to invoke their action.",
+                    IDC_STATIC,10,7,118,32
+END
+
+DISMISS DIALOG DISCARDABLE  0, 0, 155, 54
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Programable OK/Cancel"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,28,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,75,28,50,14
+    CONTROL         "OK and Cancel work only when checked",IDC_DM_mode,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,145,10
+END
+
+UPDATE DIALOG DISCARDABLE  0, 0, 202, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Control can easily change other controls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,145,102,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,125,50,14
+    EDITTEXT        IDC_UP_int,61,35,49,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_UP_string,61,54,49,14,ES_AUTOHSCROLL
+    LTEXT           "integer",IDC_STATIC,112,37,22,8
+    LTEXT           "string",IDC_STATIC,113,55,18,8
+    PUSHBUTTON      "Double",IDC_UP_doInt,7,35,50,14
+    PUSHBUTTON      "Square Root",IDC_UP_doString,7,54,50,14
+    LTEXT           "Click the individual update buttons to change the contents\nof the edit boxes.  Type stuff in the edit boxes.  Click the\n""Update both"" button to change both boxes.  Enjoy life.",
+                    IDC_STATIC,7,7,188,27
+    EDITTEXT        IDC_UP_log,7,80,126,109,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+END
+
+RANGECHECK DIALOG DISCARDABLE  0, 0, 128, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Focus can be controlled!"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,71,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,71,71,50,14
+    EDITTEXT        IDC_FO_2i,7,52,50,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "double it",IDC_FO_change,7,71,50,14
+    LTEXT           "Type an int in the edit box, click\non the double it button a couple\nof times.  Type in a new large\nnumber and click the OK button",
+                    IDC_STATIC,7,7,107,34
+END
+
+RESET DIALOG DISCARDABLE  0, 0, 191, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Hi-level control for set/reset"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,134,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,24,50,14
+    EDITTEXT        IDC_RE_persist,7,7,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RE_int,7,34,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RE_float,7,49,40,14,ES_AUTOHSCROLL
+    CONTROL         "Saved bit",IDC_RE_bool,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,49,46,10
+    COMBOBOX        IDC_RE_oneof,7,65,60,45,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Restore",IDC_RE_restore,59,87,50,14
+    PUSHBUTTON      "Save",IDC_RE_save,7,87,50,14
+    EDITTEXT        IDC_RE_string,7,20,40,14,ES_AUTOHSCROLL
+    LTEXT           "This one isn't saved",IDC_STATIC,48,8,64,8
+    LTEXT           "Save string",IDC_STATIC,48,22,36,8
+    LTEXT           "Saved int",IDC_STATIC,48,36,31,8
+    LTEXT           "Saved float",IDC_STATIC,48,50,37,8
+    LTEXT           "All time favorite dinner",IDC_STATIC,69,67,70,8
+END
+
+WIN32 DIALOG DISCARDABLE  0, 0, 133, 70
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Win32 features are available"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,76,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,76,24,50,14
+    COMBOBOX        IDC_W32_victim,7,7,48,37,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Enable",IDC_W32_enable,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,27,38,10
+    CONTROL         "Show",IDC_W32_show,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,47,34,10
+END
+
+GETI DIALOG DISCARDABLE  0, 0, 211, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,154,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,154,24,50,14
+    EDITTEXT        IDC_EDIT1,37,36,40,14,ES_AUTOHSCROLL
+END
+
+BLASTOFF DIALOG DISCARDABLE  0, 0, 186, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Count Down",IDOK,34,39,50,14
+    PUSHBUTTON      "Abort",IDCANCEL,105,39,50,14
+    LTEXT           "Static",IDC_CD_static,39,20,91,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "SIMPLE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 347
+    END
+
+    "CHOOSER", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 128
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    "IMMEDIATE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    "DYNAMIC", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 128
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    "DISMISS", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 148
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+
+    "UPDATE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+
+    "RANGECHECK", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    "RESET", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    "WIN32", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 126
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    "GETI", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    "BLASTOFF", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 53
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
